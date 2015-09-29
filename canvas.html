@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML5 Canvas</title>
+	<style>
+		canvas{
+			border:#000000 1px solid;
+			background-color: #f4f4f4;
+		}
+	</style>
+	<script>
+		var c;		//canvas
+		var ctx;	//context
+		function init(){
+			c = document.getElementById('myCanvas');
+			ctx = c.getContext('2d');
+			draw();
+		}
+		function draw(){
+			// Draw Turquoise Square
+			ctx.fillStyle = "#66cdaa";
+			ctx.fillRect(30, 30, 50, 50);
+			ctx.strokeStyle="#000000";
+			ctx.lineWidth = "3";
+			ctx.strokeRect(30, 30, 50, 50);
+
+			// Draw Black Square
+			ctx.fillStyle = "#000000";
+			ctx.fillRect(50, 50, 50, 50);
+			ctx.strokeStyle="#000000";
+			ctx.lineWidth = "3";
+			ctx.strokeRect(50, 50, 50, 50);
+
+			//Draw Text
+			ctx.font = "30pt Arial";
+			//Create Gradient
+			var gradient = ctx.createLinearGradient(0, 25, 0, c.height);
+			gradient.addColorStop("0", "#66cdaa");
+			gradient.addColorStop("1", "black");
+			//Fill Text with gradient
+			ctx.fillStyle = gradient;
+			ctx.fillText("Jim Klonowski", 110, 80);
+
+			//Draw line
+			ctx.strokeStyle = "#000000";
+			ctx.fillStyle = "#66cdaa";
+			ctx.lineWidth = 2;
+			ctx.beginPath();
+			ctx.moveTo(110, 90);
+			ctx.lineTo(360, 90);
+			ctx.stroke();
+			ctx.endPath();
+
+		}
+	</script>
+</head>
+<body onload="init()">
+	<canvas id="myCanvas" width="400" height="150">
+		<p>Sorry, your browser does not support the HTML5 canvas feature.</p>
+	</canvas>
+</body>
+</html>
