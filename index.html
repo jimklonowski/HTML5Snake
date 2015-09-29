@@ -11,9 +11,21 @@
             <br>
             <a onClick="window.location.reload()" href="#">Click To Play Again!</a>
         </div>
-        <canvas id="canvas" width="600" height="400">
-
+        <canvas id="canvas" width="598" height="400" autofocus>
+            <p>Sorry, your browser does not support the new HTML5 canvas feature. :(</p>
         </canvas>
+        <div id="stats">
+            <div id="score"></div>
+            <div id="highScore"></div>
+            <div id="controls">
+                <h4>Controls:</h4>
+                <ul>
+                    <li>Movement: Arrow Keys</li>
+                    <li>Pause: Spacebar</li>
+                </ul>
+            </div>
+            <div id="reset"><button onclick="resetScore()" id="resetScore">Reset High Score</button></div>            
+        </div>
     </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
